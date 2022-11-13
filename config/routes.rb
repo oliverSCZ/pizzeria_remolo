@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
-  root to: "home#index"
-  resources :categories
+
+  namespace :api do
+    namespace :v1 do
+      resources :categories
+      resources :products
+    end
+  end
+
 end
